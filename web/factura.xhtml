@@ -59,8 +59,9 @@
             <f:ajax execute="nombre" render="mensaje salida salida2 salida3 salida4 salida5" />
 
         </h:commandButton>
-        <br> </br>
+        <br class="alert alert-primary" >
         <h:outputText id="mensaje" value="#{detalleBean.mensaje}"/>
+        </br>
         <p> </p>
         <h:outputLabel for="salida" value="Nombre:" ></h:outputLabel>
         <h:inputText id="salida" value="#{detalleBean.nombre}" />
@@ -73,7 +74,7 @@
         <h:outputLabel for="salida4" value="Direccion:" ></h:outputLabel>
         <h:inputText id="salida4" value="#{detalleBean.direccion}" />
 
-        <h:commandButton value="Crear cliente" class="btn btn-success" ><h:link value="link" outcome="crearPersona.xhtml" />
+        <h:commandButton value="Crear cliente" class="btn btn-warning" ><h:link value="link" outcome="crearPersona.xhtml" />
         </h:commandButton>
 
         <h:outputText id="crear" value="#{detalleBean.mensaje}"/>
