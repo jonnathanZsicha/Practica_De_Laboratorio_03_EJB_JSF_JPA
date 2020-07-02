@@ -29,6 +29,9 @@
             background: none repeat scroll 0 0 #F9F9F9;
             border-top: 1px solid #BBBBBB;
         }
+        .btn btn-success{
+            margin: 20px;
+        }
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="javascript"/>
@@ -52,16 +55,19 @@
 
     <h3> Factura</h3>
     <h:form id="form">
-        <h:outputLabel class="form-group" for="nombre" value="Nombre: "></h:outputLabel>
+        <h:outputLabel class="form-group" for="nombre" value="Cedula: "></h:outputLabel>
         <h:inputText class="form-group" id="nombre" value="#{detalleBean.cedula}"></h:inputText>
 
-        <h:commandButton class="btn btn-success" value="BuscarPersona" action="#{detalleBean.mensaje()}">
+        <h:commandButton class="btn btn-success" style="margin: 10px" value="BuscarPersona" action="#{detalleBean.mensaje()}">
             <f:ajax execute="nombre" render="mensaje salida salida2 salida3 salida4 salida5" />
 
         </h:commandButton>
-        <br class="alert alert-primary" >
-        <h:outputText id="mensaje" value="#{detalleBean.mensaje}"/>
-        </br>
+        <div class="alert alert-primary" role="alert">
+            <h:outputText id="mensaje" value="#{detalleBean.mensaje}"/>
+        </div>
+
+
+
         <p> </p>
         <h:outputLabel for="salida" value="Nombre:" ></h:outputLabel>
         <h:inputText id="salida" value="#{detalleBean.nombre}" />
@@ -74,7 +80,7 @@
         <h:outputLabel for="salida4" value="Direccion:" ></h:outputLabel>
         <h:inputText id="salida4" value="#{detalleBean.direccion}" />
 
-        <h:commandButton value="Crear cliente" class="btn btn-warning" ><h:link value="link" outcome="crearPersona.xhtml" />
+        <h:commandButton value="Crear cliente"  style="margin: 10px" class="btn btn-warning" ><h:link value="link" outcome="crearPersona.xhtml" />
         </h:commandButton>
 
         <h:outputText id="crear" value="#{detalleBean.mensaje}"/>
@@ -181,13 +187,13 @@
                                       value="#{detalleBean.quantity}" />
             </li>
         </ul>
-        <h:commandButton value="Buscar Producto" class="btn btn-success" action="#{detalleBean.add}" />
+        <h:commandButton value="Buscar Producto" style="margin: 10px"  class="btn btn-success" action="#{detalleBean.add}" />
 
         <h:outputText id="producto" value="#{detalleBean.busqueda}"/>
 
-        <h:commandButton value="CrearFactura"  class="btn btn-success" action="#{detalleBean.crearFactura()}" />
+        <h:commandButton value="CrearFactura" style="margin: 10px"  class="btn btn-success" action="#{detalleBean.crearFactura()}" />
 
-        <h:commandButton value="Listar Facturas" class="btn btn-success" ><h:link value="link" outcome="listarFacturas.xhtml" />
+        <h:commandButton value="Listar Facturas"  style="margin: 10px" class="btn btn-success" ><h:link value="link" outcome="listarFacturas.xhtml" />
         </h:commandButton>
     </h:form>
     </div>
